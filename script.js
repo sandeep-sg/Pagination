@@ -45,16 +45,14 @@ function showItem() {
 
 showItem();
 let buttons = document.querySelectorAll(".btn-container button");
-
-buttons.forEach((button, i) => {
-  buttons[0].classList.add("active");
-  button.addEventListener("click", (e) => {
-    let n = e.target.innerText;
-    let targetBtn = e.target;
-    // remove active class from all buttons
-    buttons.forEach((button) => button.classList.remove("active"));
-    targetBtn.classList.add("active");
-    sliceData = data.slice(perPageItem * n - perPageItem, perPageItem * n);
-    showItem();
-  });
+buttons[0].classList.add("active");
+btnContainer.addEventListener("click", (e) => {
+  window.scroll(0, 0);
+  let n = e.target.innerText;
+  let targetBtn = e.target;
+  // remove active class from all buttons
+  buttons.forEach((button) => button.classList.remove("active"));
+  targetBtn.classList.add("active");
+  sliceData = data.slice(perPageItem * n - perPageItem, perPageItem * n);
+  showItem();
 });
