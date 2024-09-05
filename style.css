@@ -4,7 +4,9 @@
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
 }
-
+button {
+  cursor: pointer;
+}
 .container {
   padding: 10px;
   max-width: 900px;
@@ -15,8 +17,23 @@
 h1 {
   margin-bottom: 20px;
 }
+.button-flex {
+  margin: 50px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.button-flex .previous-btn,
+.next-btn {
+  padding: 10px 20px;
+  border: none;
+  background: rgb(16, 54, 130);
+  color: white;
+  border-radius: 3px;
+  font-weight: bold;
+}
 .btn-container {
-  margin-top: 15px;
   display: flex;
   gap: 15px;
   flex-wrap: wrap;
@@ -49,7 +66,17 @@ h1 {
   background: #cdcdcd;
   animation: pulse 1.5s linear infinite;
 }
-
+.small-screen-btn{
+  all: unset;
+  display: block;
+  margin:20px auto;
+  padding: 10px 60px;
+  background: black;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  display: none;
+}
 @keyframes pulse {
   50% {
     background: #ccc;
@@ -57,4 +84,13 @@ h1 {
   100% {
     background: #ededed;
   }
+}
+@media only screen and (max-width: 450px) {
+  .button-flex{
+    display: none;
+  }
+  .small-screen-btn{
+    display: block;
+  }
+  
 }
