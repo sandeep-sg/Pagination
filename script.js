@@ -11,6 +11,7 @@ for (let index = 1; index <= 200; index++) {
 }
 // No. of item per page .........
 let perPageItem = 16;
+console.log(data.length / perPageItem)
 // create button for show item per page
 for (let index = 0; index < data.length / perPageItem; index++) {
   let button = document.createElement("button");
@@ -72,6 +73,7 @@ btnContainer.addEventListener("click", (e) => {
 });
 // when user click on next button show next page......
 nextBtn.addEventListener("click", () => {
+  if(Math.floor(data.length / perPageItem) < btnNumber ) return
   btnNumber = Number(btnNumber) + 1;
   // changepage function call when user click the next button
   changePage(btnNumber);
